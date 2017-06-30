@@ -142,9 +142,17 @@ header {
     transition: 0.4s ease;
 }
 
-.bar--nav__elem:hover > .nav-link:before {
+.bar--nav__elem:hover > .nav-link:before, .active-page > .nav-link:before {
     visibility: visible;
     transform: scale(1);
+}
+
+.active-page > .nav-link:before {
+    background: #fb0;
+}
+
+.active-page > .nav-link:hover {
+    color: #fb0;
 }
 
 .center {
@@ -158,12 +166,12 @@ header {
 .header__text {
     font-family: 'Lobster', sans-serif;
     font-weight: 700;
-    color: #fff;
+    color: #0bf;
     font-size: 60px;
     background: rgba(0,0,0,.5);
     border-radius: 15px;
     padding: 5px 10px;
-    text-shadow: 0 10px 20px rgba(0,0,0,.5);
+    text-shadow: 0 10px 20px rgba(200,200,200,.5);
     transition: 0.4s ease;
 }
 
@@ -173,4 +181,8 @@ header {
     color: #fb0;
     border-bottom: 12px solid #fb0;
     box-shadow: inset 2px 5px 25px rgba(0,0,0,.3)
+}
+
+.active-page > a {
+    background: linear-gradient(0deg, rgba(200,200,200,.6), rgba(0,0,0,.4))
 }
