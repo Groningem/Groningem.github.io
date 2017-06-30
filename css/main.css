@@ -1,27 +1,27 @@
 @font-face {
     font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Regular') format('truetype');
+    src: url('../fonts/PT_Sans-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Regular') format('truetype');
-    font-weight: normal;
+    src: url('../fonts/PT_Sans-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Regular') format('truetype');
+    src: url('../fonts/PT_Sans-Italic.ttf') format('truetype');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Regular') format('truetype');
+    font-family: 'Lobster';
+    src: url('../fonts/Lobster.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -33,6 +33,7 @@ body, html {
     position: relative;
     height: 100%;
     width: 100%;
+    font-family: 'PT Sans', sans-serif;
 }
 
 * {
@@ -40,6 +41,12 @@ body, html {
     margin: 0;
     box-sizing: border-box;
     position: relative;
+    font-family: 'PT Sans', sans-serif;
+}
+
+a, a:link, a:active, a:focus {
+    text-decoration: inherit;
+    color: inherit;
 }
 
 header {
@@ -76,9 +83,10 @@ header {
     top: 0;
     position: fixed;
 }
-.bar--top, bar--nav {
+.bar--top, .bar--nav {
     display: inline-flex;
     width: 100%;
+    height: 100%;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
@@ -94,3 +102,47 @@ header {
     margin: 0 auto;
 }
 
+.bar--nav__elem {
+    margin: 0 2px;
+    flex: 1 1 80px;
+    font-size: 20px;
+    height: 100%;
+    text-align: center;
+    line-height: 4.3em;
+    border-radius: 5px;
+    transition: 0.4s ease;
+}
+
+.nav-elem4 {
+    margin: 0 auto;
+    width: 400px;
+    flex-grow: 3;
+}
+
+.nav-link:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    width: 100%;
+    border-radius: 5px;
+    bottom: -2px;
+    height: 5px;
+    background: #0bf;
+    transform: scale(0);
+    transition: all 0.4s ease 0s;
+    opacity 0.9;
+    visibility: hidden;
+}
+.nav-link {
+    padding: 30px 2px;
+    border-radius: 5px;
+}
+.nav-link:hover {
+    color: #0cf;
+    transition: 0.4s ease;
+}
+
+.bar--nav__elem:hover > .nav-link:before {
+    visibility: visible;
+    transform: scale(1);
+}
